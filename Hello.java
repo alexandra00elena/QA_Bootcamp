@@ -1,3 +1,6 @@
+/// Course 02 Java Intro DataTypes Flow Control
+/// 03.10.2024
+
 public class Hello {
 
     public static void main(String[] args) {

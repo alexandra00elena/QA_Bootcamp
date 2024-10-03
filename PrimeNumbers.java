@@ -1,4 +1,6 @@
-/// Display all the prime numbers lower than 1 000 000. Name the class (and java file) PrimeNumbers
+/// 2. Display all the prime numbers lower than 1 000 000. Name the class (and java file) PrimeNumbers
+/// Alexandra-Elena Pribagu
+/// 03.10.2024
 
 public class PrimeNumbers {
 
