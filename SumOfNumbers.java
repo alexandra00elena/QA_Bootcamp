@@ -1,4 +1,6 @@
-/// Calculate the sum of the first 100 numbers higher than 0. Name the class (and java file) SumOfNumbers.
+/// 1. Calculate the sum of the first 100 numbers higher than 0. Name the class (and java file) SumOfNumbers.
+/// Alexandra-Elena Pribagu
+/// 03.10.2024
 
 public class SumOfNumbers {
 
