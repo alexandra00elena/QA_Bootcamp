@@ -2,10 +2,12 @@
 ///        HINT:    A year is a leap year if:
 ///                     -Is divisible by 4 but not by 100
 ///                     -Is divisible by 400
-/// Name the class (and java file) LeapYear.
+/// Name the class (and java file) homeworks.h1.LeapYear.
 
 /// Alexandra-Elena Pribagu
 /// 03.10.2024
+
+package homeworks.h1_JavaIntro;
 
 public class LeapYear {
 
