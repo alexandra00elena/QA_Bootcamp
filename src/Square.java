@@ -1,7 +1,4 @@
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @NoArgsConstructor
 public class Square extends Rectangle{
@@ -33,6 +30,11 @@ public class Square extends Rectangle{
     }
 
     public void setSide(double i) {
+        super.setLength(i);
+        super.setWidth(i);
+    }
+
+    public void setSquareSide(double i) {
         super.setLength(i);
         super.setWidth(i);
     }
