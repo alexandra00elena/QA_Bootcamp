@@ -15,7 +15,7 @@
                 <surefireVersion>3.4.0</surefireVersion>
                 <extentVersion>5.1.2</extentVersion>
                 <suiteFile>testSuites\runSuites.xml</suiteFile>
-                <seleniumVersion>4.25.0</seleniumVersion>
+                <seleniumVersion>4.26.0</seleniumVersion>
         </properties>
 
         <dependencies>
@@ -56,6 +56,7 @@
                 </dependency>
 
 
+                <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
                 <dependency>
                         <groupId>org.seleniumhq.selenium</groupId>
                         <artifactId>selenium-java</artifactId>
