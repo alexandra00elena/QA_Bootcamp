@@ -15,6 +15,10 @@ public class CalculatorNgTest {
 
     Calculator c;
     final String additionFailMessage = "Addition failed.";
+    final String subtractionFailMessage = "Subtraction failed.";
+    final String divisionFailMessage = "Division failed.";
+    final String multiplicationFailMessage = "Multiplication failed.";
+    final String squareRootFailMessage = "Square root failed.";
     ExtentReports extent = new ExtentReports();
     ITestContext testContext;
 
@@ -33,6 +37,42 @@ public class CalculatorNgTest {
         dp.add(new Object[] {100, 20, 80, "+", additionFailMessage});
         dp.add(new Object[] {1000, 555, 445, "+", additionFailMessage});
         dp.add(new Object[] {1, 1 , 0 , "+", additionFailMessage});
+        return dp.iterator();
+    }
+
+    @DataProvider
+    public Iterator<Object[]> subtractionDataProvider() {
+        Collection<Object[]> dp = new ArrayList<>();
+        dp.add(new Object[] {10, 5, -5, "-", subtractionFailMessage});
+        dp.add(new Object[] {0, -5, -5, "-", subtractionFailMessage});
+        dp.add(new Object[] {100, 134 , 34, "-", additionFailMessage});
+        return dp.iterator();
+    }
+
+    @DataProvider
+    public Iterator<Object[]> divisionDataProvider() {
+        Collection<Object[]> dp = new ArrayList<>();
+        dp.add(new Object[] {-2, 10, -5, "/", divisionFailMessage});
+        dp.add(new Object[] {50, -150, -3, "/", divisionFailMessage});
+        dp.add(new Object[] {7, 70, 10, "/", divisionFailMessage});
+        return dp.iterator();
+    }
+
+    @DataProvider
+    public Iterator<Object[]> multiplicationDataProvider() {
+        Collection<Object[]> dp = new ArrayList<>();
+        dp.add(new Object[] {0, 10, 0, "*", multiplicationFailMessage});
+        dp.add(new Object[] {Math.abs(0), -20, 0, "*", multiplicationFailMessage});
+        dp.add(new Object[] {49, 7, 7, "*", multiplicationFailMessage});
+        return dp.iterator();
+    }
+
+    @DataProvider
+    public Iterator<Object[]> squareRootDataProvider() {
+        Collection<Object[]> dp = new ArrayList<>();
+        dp.add(new Object[] {8, 64, 0, "SQRT", squareRootFailMessage});
+        dp.add(new Object[] {Math.sqrt(2), 2, 0, "SQRT", squareRootFailMessage});
+        dp.add(new Object[] {7, 49, 0, "SQRT", squareRootFailMessage});
         return dp.iterator();
     }
 
@@ -57,7 +97,7 @@ public class CalculatorNgTest {
 
     }
 
-    @BeforeGroups(groups = {"addition", "calculator"})
+    @BeforeGroups(groups = {"addition", "calculator", "homework"})
     public void setUpGroups() {
         setupGeneric();
     }
@@ -107,6 +147,32 @@ public class CalculatorNgTest {
         mytest.pass("test finished");
     }
 
+    public void genericTestDataProvider(double exp, double d1, double d2, String op, String message){
+        ExtentTest mytest = extent.createTest(new Object(){}.getClass().getEnclosingMethod().getName());
+        Assert.assertEquals(exp, c.compute(d1, d2, op), message);
+        mytest.pass("test finished");
+    }
+
+    @Test(testName ="SustractionDataProvider", groups = {"homework"}, dataProvider = "subtractionDataProvider")
+    public void test07(double exp, double d1, double d2, String op, String message) {
+        genericTestDataProvider(exp, d1, d2, op, message);
+    }
+
+    @Test(testName ="DivisionDataProvider", groups = {"homework"}, dataProvider = "divisionDataProvider")
+    public void test08(double exp, double d1, double d2, String op, String message) {
+        genericTestDataProvider(exp, d1, d2, op, message);
+    }
+
+    @Test(testName ="MultiplicationDataProvider", groups = {"homework"}, dataProvider = "multiplicationDataProvider")
+    public void test09(double exp, double d1, double d2, String op, String message) {
+        genericTestDataProvider(exp, d1, d2, op, message);
+    }
+
+    @Test(testName ="SquareRootDataProvider", groups = {"homework"}, dataProvider = "squareRootDataProvider")
+    public void test10(double exp, double d1, double d2, String op, String message) {
+        genericTestDataProvider(exp, d1, d2, op, message);
+    }
+
     private void cleanUpGeneric() {
         extent.flush();
     }
@@ -121,7 +187,7 @@ public class CalculatorNgTest {
         cleanUpGeneric();
     }
 
-    @AfterGroups(groups = {"addition", "calculator"})
+    @AfterGroups(groups = {"addition", "calculator", "homework"})
     public void afterGroups() {
         cleanUpGeneric();
     }

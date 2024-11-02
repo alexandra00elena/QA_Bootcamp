@@ -62,6 +62,27 @@ public class CalculatorTests {
         Assertions.assertEquals(Math.sqrt(2), c.compute(2, 0, "SQRT"), "Square root failed");
     }
 
+    //new tests - homework
+    @Test
+    public void testSubtraction02() {
+        Assertions.assertEquals(0, c.compute(-5, -5, "-"), "Substraction failed");
+    }
+
+    @Test
+    public void testMultiplication02() {
+        Assertions.assertEquals(-50, c.compute(10, -5, "*"), "Multiplication failed");
+    }
+
+    @Test
+    public void testMultiplication03() {
+        Assertions.assertEquals(0, Math.abs(c.compute(0, -20, "*")), "Multiplication failed");
+    }
+
+    @Test
+    public void testDivision01(){
+        Assertions.assertEquals(-2, c.compute(10, -5, "/"), "Division failed");
+    }
+
     @AfterEach
     public void cleanTest() {
         System.out.println("Clean after the test.");
