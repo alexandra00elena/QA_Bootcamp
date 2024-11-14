@@ -1,0 +1,125 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+        <modelVersion>4.0.0</modelVersion>
+
+        <groupId>ro.qa.bootcamp.betfair</groupId>
+        <artifactId>qa_bootcamp</artifactId>
+        <version>1.0</version>
+
+        <properties>
+                <maven.compiler.source>17</maven.compiler.source>
+                <maven.compiler.target>17</maven.compiler.target>
+                <junitVersion>5.11.2</junitVersion>
+                <lombokVersion>1.18.34</lombokVersion>
+                <testngVersion>7.10.2</testngVersion>
+                <surefireVersion>3.4.0</surefireVersion>
+                <extentVersion>5.1.2</extentVersion>
+                <suiteFile>testSuites\runSuites.xml</suiteFile>
+                <seleniumVersion>4.26.0</seleniumVersion>
+                <restAssuredVersion>5.5.0</restAssuredVersion>
+                <hamcrestVersion>3.0</hamcrestVersion>
+                <jsonVersion>20240303</jsonVersion>
+                <gsonVersion>2.9.0</gsonVersion>
+        </properties>
+
+        <dependencies>
+                <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+                <dependency>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter-api</artifactId>
+                        <version>${junitVersion}</version>
+                        <scope>compile</scope>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+                <dependency>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                        <version>${lombokVersion}</version>
+                        <scope>provided</scope>
+                </dependency>
+                <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+                <dependency>
+                        <groupId>org.testng</groupId>
+                        <artifactId>testng</artifactId>
+                        <version>${testngVersion}</version>
+                        <scope>compile</scope>
+                </dependency>
+
+                <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+                <dependency>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>${surefireVersion}</version>
+                </dependency>
+
+                <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+                <dependency>
+                        <groupId>com.aventstack</groupId>
+                        <artifactId>extentreports</artifactId>
+                        <version>${extentVersion}</version>
+                </dependency>
+
+
+                <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+                <dependency>
+                        <groupId>org.seleniumhq.selenium</groupId>
+                        <artifactId>selenium-java</artifactId>
+                        <version>${seleniumVersion}</version>
+                </dependency>
+
+                <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
+                <dependency>
+                        <groupId>io.rest-assured</groupId>
+                        <artifactId>rest-assured</artifactId>
+                        <version>${restAssuredVersion}</version>
+                        <scope>compile</scope>
+                </dependency>
+
+                <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest -->
+                <dependency>
+                        <groupId>org.hamcrest</groupId>
+                        <artifactId>hamcrest</artifactId>
+                        <version>${hamcrestVersion}</version>
+                        <scope>compile</scope>
+                </dependency>
+                <dependency>
+                        <groupId>junit</groupId>
+                        <artifactId>junit</artifactId>
+                        <version>RELEASE</version>
+                        <scope>test</scope>
+                </dependency>
+
+                <dependency>
+                        <groupId>org.json</groupId>
+                        <artifactId>json</artifactId>
+                        <version>${jsonVersion}</version>
+                </dependency>
+
+                <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+                <dependency>
+                        <groupId>com.google.code.gson</groupId>
+                        <artifactId>gson</artifactId>
+                        <version>${gsonVersion}</version>
+                </dependency>
+
+
+        </dependencies>
+
+        <build>
+                <pluginManagement>
+                        <plugins>
+                                <plugin>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-surefire-plugin</artifactId>
+                                        <version>${surefireVersion}</version>
+                                        <configuration>
+                                                <suiteXmlFiles>
+                                                        <suiteXmlFile>${suiteFile}</suiteXmlFile>
+                                                </suiteXmlFiles>
+                                        </configuration>
+                                </plugin>
+                        </plugins>
+                </pluginManagement>
+        </build>
+
+</project>
