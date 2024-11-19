@@ -4,10 +4,7 @@ import com.google.gson.Gson;
 import io.restassured.http.*;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
-import juiceShop.frameworkUtils.Utils;
 
-import io.restassured.RestAssured;
 import org.hamcrest.Matchers;
 import org.json.JSONObject;
 import org.testng.Assert;

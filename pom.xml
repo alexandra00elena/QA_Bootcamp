@@ -14,12 +14,13 @@
                 <testngVersion>7.10.2</testngVersion>
                 <surefireVersion>3.4.0</surefireVersion>
                 <extentVersion>5.1.2</extentVersion>
-                <suiteFile>testSuites\runSuites.xml</suiteFile>
+                <suiteFile>testSuites\petStoreSuite.xml</suiteFile>
                 <seleniumVersion>4.26.0</seleniumVersion>
                 <restAssuredVersion>5.5.0</restAssuredVersion>
                 <hamcrestVersion>3.0</hamcrestVersion>
                 <jsonVersion>20240303</jsonVersion>
                 <gsonVersion>2.9.0</gsonVersion>
+                <sureFireRunnerVersion>3.5.2</sureFireRunnerVersion>
         </properties>
 
         <dependencies>
@@ -102,6 +103,12 @@
                         <version>${gsonVersion}</version>
                 </dependency>
 
+                <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-junit47</artifactId>
+                        <version>${sureFireRunnerVersion}</version>
+                </dependency>
+
 
         </dependencies>
 
@@ -116,7 +123,20 @@
                                                 <suiteXmlFiles>
                                                         <suiteXmlFile>${suiteFile}</suiteXmlFile>
                                                 </suiteXmlFiles>
+                                                <properties>
+                                                        <name>listener</name>
+                                                        <value>customReporting/customTestListener.java</value>
+                                                </properties>
                                         </configuration>
+
+                                        <dependencies>
+                                                <dependency>
+                                                        <groupId>org.apache.maven.surefire</groupId>
+                                                        <artifactId>surefire-testng</artifactId>
+                                                        <version>${sureFireRunnerVersion}</version>
+                                                </dependency>
+                                        </dependencies>
+
                                 </plugin>
                         </plugins>
                 </pluginManagement>

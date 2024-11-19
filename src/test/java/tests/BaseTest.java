@@ -1,4 +1,4 @@
-package demoSite.tests;
+package tests;
 
 import juiceShop.frameworkUtils.Utils;
 import org.openqa.selenium.WebDriver;
