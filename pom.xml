@@ -29,7 +29,7 @@
                         <groupId>org.junit.jupiter</groupId>
                         <artifactId>junit-jupiter-api</artifactId>
                         <version>${junitVersion}</version>
-                        <scope>compile</scope>
+                        <scope>test</scope>
                 </dependency>
                 <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
                 <dependency>
@@ -43,7 +43,7 @@
                         <groupId>org.testng</groupId>
                         <artifactId>testng</artifactId>
                         <version>${testngVersion}</version>
-                        <scope>compile</scope>
+                        <scope>test</scope>
                 </dependency>
 
                 <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
@@ -73,7 +73,7 @@
                         <groupId>io.rest-assured</groupId>
                         <artifactId>rest-assured</artifactId>
                         <version>${restAssuredVersion}</version>
-                        <scope>compile</scope>
+                        <scope>test</scope>
                 </dependency>
 
                 <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest -->
@@ -81,7 +81,7 @@
                         <groupId>org.hamcrest</groupId>
                         <artifactId>hamcrest</artifactId>
                         <version>${hamcrestVersion}</version>
-                        <scope>compile</scope>
+                        <scope>test</scope>
                 </dependency>
                 <dependency>
                         <groupId>junit</groupId>
