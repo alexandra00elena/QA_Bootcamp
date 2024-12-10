@@ -14,7 +14,7 @@
                 <testngVersion>7.10.2</testngVersion>
                 <surefireVersion>3.4.0</surefireVersion>
                 <extentVersion>5.1.2</extentVersion>
-                <suiteFile>testSuites\petStoreSuite.xml</suiteFile>
+                <suiteFile>testSuites/petStoreSuite.xml</suiteFile>
                 <seleniumVersion>4.26.0</seleniumVersion>
                 <restAssuredVersion>5.5.0</restAssuredVersion>
                 <hamcrestVersion>3.0</hamcrestVersion>
